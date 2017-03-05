@@ -15,13 +15,9 @@ class Missatge extends Migration
     {
         Schema::create('missatge', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('login_id')->unsigned();
             $table->string('text');
+            $table->string('nick');
             $table->timestamps();
-        });
-
-        Schema::table('missatge', function(Blueprint $table) {
-            $table->foreign('login_id')->references('id')->on('login');
         });
     }
 
